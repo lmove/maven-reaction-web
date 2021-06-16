@@ -2,7 +2,7 @@ from flask import Flask, make_response, render_template, request
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/maven-reaction"
+app.config['MONGO_URI'] = os.environ['MONGO_URI']
 mongo = PyMongo(app)
 
 
