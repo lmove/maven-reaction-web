@@ -1,1 +1,1 @@
-web: gunicorn app:maven-reaction-web
+web: gunicorn app:app
