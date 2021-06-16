@@ -1,8 +1,10 @@
 from flask import Flask, make_response, render_template, request
+from flask_cors import CORS
 from flask_pymongo import PyMongo
 import os
 
 app = Flask(__name__)
+CORS(app)
 app.config['MONGO_URI'] = os.environ['MONGO_URI']
 mongo = PyMongo(app)
 
