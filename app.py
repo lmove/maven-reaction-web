@@ -28,10 +28,13 @@ def add_issue(form):
 		'artifactId': form['artifactId'],
 		'v1': form['v1'],
 		'v2': form['v2'],
-		'bc': form['bc'],
 		'detectionId': form['detectionId'],
-		'useId': form['useId'],
-		'path': form['path']
+		'bc': form['bc'],
+		'use': form['use'],
+		'rangeId': form['rangeId'],
+		'title': form['title'],
+		'reviewer': form['reviewer'],
+		'description': form['description']
 	}
 	issues.insert_one(issue)
 	response = make_response()
