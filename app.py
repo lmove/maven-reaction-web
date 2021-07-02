@@ -32,9 +32,11 @@ def add_issue(form):
 		'bc': form['bc'],
 		'use': form['use'],
 		'rangeId': form['rangeId'],
-		'title': form['title'],
 		'reviewer': form['reviewer'],
-		'description': form['description']
+		'description': form['description'],
+		'validDetection': form['validDetection'],
+		'sliceNoise': form['sliceNoise'],
+		'sliceRelevance': form['sliceRelevance']
 	}
 	issues.insert_one(issue)
 	response = make_response()
