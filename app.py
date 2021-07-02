@@ -34,6 +34,7 @@ def add_issue(form):
 		'rangeId': form['rangeId'],
 		'reviewer': form['reviewer'],
 		'description': form['description'],
+		'emptyDiff': form['emptyDiff'],
 		'validDetection': form['validDetection'],
 		'sliceNoise': form['sliceNoise'],
 		'sliceRelevance': form['sliceRelevance']
