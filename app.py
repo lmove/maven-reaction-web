@@ -50,9 +50,22 @@ def show_issues():
 	col_issues = mongo.db.issues
 	issues = col_issues.find()
 	modif_issues = list()
+	api = get_api_info()
 	
 	for issue in issues:
 		issue['date'] = str(datetime.fromtimestamp(issue['timestamp']))
 		modif_issues.append(issue)
 
-	return render_template('feedback.html', issues=modif_issues)
+	return render_template('feedback.html', issues=modif_issues, api=api)
+
+def get_api_info():
+	col_issues = mongo.db.issues
+	issue = col_issues.find_one()
+
+	api = dict()
+	api['groupId'] = issue['groupId']
+	api['artifactId'] = issue['artifactId']
+	api['v1'] = issue['v1']
+	api['v2'] = issue['v2']
+
+	return api
