@@ -51,6 +51,6 @@ def show_issues():
 	all_issues = issues.find({})
 	
 	for issue in all_issues:
-		issue.date = datetime.fromtimestamp(issue.timestamp)
+		issue['date'] = str(datetime.fromtimestamp(issue['timestamp']))
 
 	return render_template('feedback.html', issues=all_issues)
