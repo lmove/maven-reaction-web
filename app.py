@@ -47,10 +47,12 @@ def add_issue(form):
 	return response
 
 def show_issues():
-	issues = mongo.db.issues
-	all_issues = issues.find({})
+	col_issues = mongo.db.issues
+	issues = col_issues.find()
+	modif_issues = list()
 	
-	for issue in all_issues:
+	for issue in issues:
 		issue['date'] = str(datetime.fromtimestamp(issue['timestamp']))
+		modif_issues.append(issue)
 
-	return render_template('feedback.html', issues=all_issues)
+	return render_template('feedback.html', issues=modif_issues)
