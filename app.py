@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 from flask import Flask, make_response, render_template, request
 from flask_cors import CORS
 from flask_pymongo import PyMongo
@@ -39,7 +39,7 @@ def add_issue(form):
 		'validDetection': form['validDetection'],
 		'sliceNoise': form['sliceNoise'],
 		'sliceRelevance': form['sliceRelevance'],
-		'timestamp': datetime.datetime.now().timestamp()
+		'timestamp': datetime.now().timestamp()
 	}
 	issues.insert_one(issue)
 	response = make_response()
