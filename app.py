@@ -47,4 +47,6 @@ def add_issue(form):
 	return response
 
 def show_issues():
-	return render_template('issues.html')
+	issues = mongo.db.issues
+	all_issues = issues.find({})
+	return render_template('feedback.html', issues=all_issues)
