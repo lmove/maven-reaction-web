@@ -32,16 +32,16 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<h1>Feedback</h1>
+			<h1 class="mx-4">Feedback</h1>
 			<!-- API information -->
-			<div class="col my-5">
+			<div class="col my-5 mx-4">
 				<p class="row mb-2"><b>Group ID:</b> {{ api.groupId }}</p>
 				<p class="row mb-2"><b>Artifact ID:</b> {{ api.artifactId }}</p>
 				<p class="row mb-2"><b>Version 1:</b> {{ api.v1 }}</p>
 				<p class="row mb-2"><b>Version 2:</b> {{ api.v2 }}</p>
 			</div>
 			<!-- Feedback -->
-			<div class="col">
+			<div class="col mb-5 mx-4">
 				<table id="tableIssues" class="table table-striped table-hover">
 					<thead>
 						<tr>
