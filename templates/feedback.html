@@ -56,21 +56,23 @@
 			<tbody>
 				{% for issue in issues %}
 				<tr>
-					<th>{{ issue.groupId }}</th>
-					<th>{{ issue.artifactId }}</th>
-					<th>{{ issue.v1 }}</th>
-					<th>{{ issue.v2 }}</th>
-					<th>{{ issue.detectionId }}</th>
-					<th>{{ issue.bc }}</th>
-					<th>{{ issue.use }}</th>
-					<th>{{ issue.rangeId }}</th>
-					<th>{{ issue.reviewer }}</th>
-					<th>{{ issue.emptyDiff }}</th>
-					<th>{{ issue.validDetection }}</th>
-					<th>{{ issue.sliceNoise }}</th>
-					<th>{{ issue.sliceRelevance }}</th>
-					<th>{{ issue.description }}</th>
-					<th>{{ datetime.fromtimestamp(issue.timestamp) }}</th>
+					<td>{{ issue.groupId }}</td>
+					<td>{{ issue.artifactId }}</td>
+					<td>{{ issue.v1 }}</td>
+					<td>{{ issue.v2 }}</td>
+					<td>{{ issue.detectionId }}</td>
+					<td>{{ issue.bc }}</td>
+					<td>{{ issue.use }}</td>
+					<td>{{ issue.rangeId }}</td>
+					<td>{{ issue.reviewer }}</td>
+					<td>{{ issue.emptyDiff }}</td>
+					<td>{{ issue.validDetection }}</td>
+					<td>{{ issue.sliceNoise }}</td>
+					<td>{{ issue.sliceRelevance }}</td>
+					<td style="word-wrap: break-word">
+						{{ issue.description }}
+					</td>
+					<td>{{ issue.date }}</td>
 				</tr>
 				{% endfor %}
 			</tbody>
